@@ -1,25 +1,18 @@
-﻿@model PoolStudio.WEB.Models.Item
+﻿@model PoolStudio.WEB.Models.ItemTest
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Agregar Nuevo Producto</h1>
+<h1>Edit</h1>
 
+<h4>ItemTest</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" accept="image/*" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ClasificationId" class="control-label"></label>
-                <select asp-for="ClasificationId" class ="form-control" asp-items="ViewBag.ClasificationId"></select>
-            </div>
+            <input type="hidden" asp-for="ItemTestId" />
             <div class="form-group">
                 <label asp-for="ItemName" class="control-label"></label>
                 <input asp-for="ItemName" class="form-control" />
@@ -41,18 +34,14 @@
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <a class="btn btn-dark" asp-action="Index">
-                    
-                    Regresar
-                </a> |
-
-                <input type="submit" value="Agregar" class="btn btn-success"/>
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

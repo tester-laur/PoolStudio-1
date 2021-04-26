@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PoolStudio.WEB.Models.ItemTest>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+    <h1>
+        Prueba     <a class="btn btn-primary" asp-action="Create">Agregar</a>
+    </h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ItemTestId">Editar</a> |
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.ItemTestId">Detalles</a> |
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ItemTestId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+@* Paginación (Lo correcto es hacerlo con un partial view(que ya está creado), pero hay un bobo y mientras tanto se deja así.) *@
+
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+    <ul class="pagination justify-content-end">
+
+        @if (pager.CurrentPage > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller="ItemTests" asp-action="Index" asp-route-pg="1">Inicio</a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" asp-controller="ItemTests" asp-action="Index" asp-route-pg="@(pager.CurrentPage - 1)">Anterior</a>
+            </li>
+        }
+
+        @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+        {
+            <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                <a class="page-link" asp-controller="ItemTests" asp-action="Index" asp-route-pg="@pge">@pge</a>
+            </li>
+        }
+
+        @if (pager.CurrentPage < pager.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller="ItemTests" asp-action="Index" asp-route-pg="@(pager.CurrentPage + 1)">Siguiente</a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" asp-controller="ItemTests" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Final</a>
+            </li>
+        }
+
+    </ul>
+    }
+
+</div>

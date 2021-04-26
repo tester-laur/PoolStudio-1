@@ -1,27 +1,15 @@
-﻿@model PoolStudio.WEB.Models.Item
+﻿@model PoolStudio.WEB.Models.ItemTest
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalles</h1>
+<h1>Details</h1>
 
 <div>
+    <h4>ItemTest</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            Producto
-            @*@Html.DisplayNameFor(model => model.ImageName)*@
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" width="150px;" height="150px;" />
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clasification)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Clasification.ItemType)
-        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ItemName)
         </dt>
@@ -49,15 +37,6 @@
     </dl>
 </div>
 <div>
-    @*<a asp-action="Edit" asp-route-id="@Model.ItemId">Edit</a> |*@
-    <a class="btn btn-dark" asp-action="Index">
-        <i class="fas fa-arrow-left"></i>
-        Regresar
-    </a> |
-
-    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ItemId">
-        <i class="fas fa-trash-alt"></i>
-        Eliminar
-    </a>
-
+    <a asp-action="Edit" asp-route-id="@Model.ItemTestId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

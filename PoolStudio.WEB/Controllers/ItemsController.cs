@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +15,56 @@ namespace PoolStudio.WEB.Controllers
     public class ItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        [Obsolete]
+        private readonly IHostingEnvironment _hostEnvironment;
 
-        public ItemsController(ApplicationDbContext context)
+        [Obsolete]
+        public ItemsController(ApplicationDbContext context, IHostingEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         // GET: Items
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pg = 1)
         {
-            var applicationDbContext = _context.Item.Include(i => i.Clasification);
-            return View(await applicationDbContext.ToListAsync());
+            List<Item> items = _context.Item.Include(i => i.Clasification).ToList();
+
+            const int pageSize = 5;
+            if (pg < 1)
+                pg = 1;
+
+            int recsCount = items.Count();
+
+            var pager = new Pager(recsCount, pg, pageSize);
+
+            int recSkip = (pg - 1) * pageSize;
+
+            var data = items.Skip(recSkip).Take(pager.PageSize).ToList();
+
+            this.ViewBag.Pager = pager;
+
+            return View(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Search(string varSearch)
+        {
+            ViewData["GetDetails"] = varSearch;
+
+            var varQuery = from x in _context.Item.Include(o => o.Clasification) select x;
+            if (!String.IsNullOrEmpty(varSearch))
+            {
+                varQuery = varQuery.Where(
+                    x => x.Clasification.ItemType.Contains(varSearch) || 
+                    x.ItemName.Contains(varSearch) || 
+                    x.Modelo.Contains(varSearch) || 
+                    x.Brand.Contains(varSearch) || 
+                    x.Comment.Contains(varSearch)
+                    );
+            }
+
+            return View(await varQuery.AsNoTracking().ToListAsync());
         }
 
         // GET: Items/Details/5
@@ -48,7 +89,7 @@ namespace PoolStudio.WEB.Controllers
         // GET: Items/Create
         public IActionResult Create()
         {
-            ViewData["ClasificationId"] = new SelectList(_context.Set<Clasification>(), "ClasificationId", "ItemType");
+            ViewData["ClasificationId"] = new SelectList(_context.Clasification, "ClasificationId", "ItemType");
             return View();
         }
 
@@ -57,15 +98,28 @@ namespace PoolStudio.WEB.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemId,ClasificationId,ItemName,Modelo,Brand,Comment")] Item item)
+        [Obsolete]
+        public async Task<IActionResult> Create([Bind("ItemId,ImageFile,ClasificationId,ItemName,Modelo,Brand,Comment")] Item item)
         {
             if (ModelState.IsValid)
             {
+                // Save image to wwwroot/UserImages
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(item.ImageFile.FileName);
+                string extension = Path.GetExtension(item.ImageFile.FileName);
+                item.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/Imagenes/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await item.ImageFile.CopyToAsync(fileStream);
+                }
+
+                // Insert record
                 _context.Add(item);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Set<Clasification>(), "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["ClasificationId"] = new SelectList(_context.Clasification, "ClasificationId", "ItemType", item.ClasificationId);
             return View(item);
         }
 
@@ -82,7 +136,7 @@ namespace PoolStudio.WEB.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Set<Clasification>(), "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["ClasificationId"] = new SelectList(_context.Clasification, "ClasificationId", "ItemType", item.ClasificationId);
             return View(item);
         }
 
@@ -91,7 +145,7 @@ namespace PoolStudio.WEB.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ClasificationId,ItemName,Modelo,Brand,Comment")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ImageName,ClasificationId,ItemName,Modelo,Brand,Comment")] Item item)
         {
             if (id != item.ItemId)
             {
@@ -118,7 +172,7 @@ namespace PoolStudio.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Set<Clasification>(), "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["ClasificationId"] = new SelectList(_context.Clasification, "ClasificationId", "ItemType", item.ClasificationId);
             return View(item);
         }
 
@@ -144,9 +198,17 @@ namespace PoolStudio.WEB.Controllers
         // POST: Items/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Obsolete]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var item = await _context.Item.FindAsync(id);
+
+            // Delete image from wwwroot/UserImages
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Imagenes", item.ImageName);
+            if (System.IO.File.Exists(imagePath))
+                System.IO.File.Delete(imagePath);
+
+            // Delete the record
             _context.Item.Remove(item);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

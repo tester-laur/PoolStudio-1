@@ -28,7 +28,7 @@
         height: 38px;
         background-color: #F39C12;
         color: #FDFEFE;
-        margin-top: 10px;        
+        margin-top: 10px;
     }
 
     #buscador {
@@ -41,7 +41,6 @@
         background-color: #2980B9;
         color: #FDFEFE;
     }
-
 </style>
 
 
@@ -49,10 +48,11 @@
 <form method="get" asp-action="Search">
 
     <div class="row">
-        <h2 style="margin-left:30px;">Productos 
+        <h2 style="margin-left:30px;">
+            Productos
             <a id="agregar" class="btn btn" asp-action="Create">
-                <i class="fas fa-plus"></i>
-                Añadir
+                
+                Agregar
             </a>
         </h2>
 
@@ -87,9 +87,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Brand)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.Comment)
-            </th>*@
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -112,9 +112,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Brand)
                 </td>
-                @*<td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Comment)
-                </td>*@
+                </td>
                 <td>
                     @*<a style="color: #FDFEFE;" class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ItemId">
                         <i class="fas fa-edit"></i>

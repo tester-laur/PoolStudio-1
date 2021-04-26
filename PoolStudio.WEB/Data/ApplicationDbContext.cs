@@ -14,6 +14,9 @@ namespace PoolStudio.WEB.Data
         {
         }
         public DbSet<PoolStudio.WEB.Models.Item> Item { get; set; }
+
         public DbSet<PoolStudio.WEB.Models.Clasification> Clasification { get; set; }
+
+        public DbSet<PoolStudio.WEB.Models.ItemTest> ItemTests { get; set; }
     }
 }
