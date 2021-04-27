@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<PoolStudio.WEB.Models.Item>
 
+
 @{
+
+
     ViewData["Title"] = "Index";
 
     Pager pager = new Pager();
@@ -12,13 +15,14 @@
         pager = ViewBag.Pager;
         pageNo = pager.CurrentPage;
     }
+
 }
 
 <style>
     #botones {
         margin-left: 10px;
         height: 38px;
-        margin-top: 10px;
+        margin-top: 40px;
         background-color: #27AE60;
         color: #FDFEFE;
     }
@@ -28,20 +32,19 @@
         height: 38px;
         background-color: #F39C12;
         color: #FDFEFE;
-        margin-top: 10px;        
+        margin-top: 40px;
     }
 
     #buscador {
         width: 250px;
         margin-left: 450px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
 
     #agregar {
         background-color: #2980B9;
         color: #FDFEFE;
     }
-
 </style>
 
 
@@ -49,7 +52,8 @@
 <form method="get" asp-action="Search">
 
     <div class="row">
-        <h2 style="margin-left:30px;">Productos 
+        <h2 style="margin-left:70px; margin-top:40px;">
+            Productos
             <a id="agregar" class="btn btn" asp-action="Create">
                 <i class="fas fa-plus"></i>
                 Añadir
@@ -57,10 +61,10 @@
         </h2>
 
 
-        <input id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
+        <input style="margin-bottom:30px; margin-top:40px;" id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
         <input id="boton2" type="submit" name="Search" value="Buscar" class="btn btn" />
         <a id="botones" asp-action="Index" class="btn btn">
-            <i class="fas fa-fw fa-reply"></i>
+            <i class="fas fa-fw fa-reply">Regresar</i>
         </a>
     </div>
 
@@ -68,7 +72,7 @@
 
 <p>
 </p>
-<table class="table">
+<table style="margin-left:70px; margin-top:40px;" class="table">
     <thead>
         <tr>
             <th>
@@ -76,11 +80,13 @@
                 @*@Html.DisplayNameFor(model => model.ImageName)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Clasification)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.ItemName)
             </th>
+            <th>
+                Categoría
+                @*@Html.DisplayNameFor(model => model.Clasification)*@
+            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Modelo)
             </th>
@@ -88,8 +94,8 @@
                 @Html.DisplayNameFor(model => model.Brand)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Comment)
+                </th>*@
             <th></th>
         </tr>
     </thead>
@@ -101,11 +107,12 @@
                     <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" width="100px;" height="100px;" />
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Clasification.ItemType)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.ItemName)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clasification.ItemType)
+                </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Modelo)
                 </td>
@@ -113,13 +120,13 @@
                     @Html.DisplayFor(modelItem => item.Brand)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>*@
                 <td>
                     @*<a style="color: #FDFEFE;" class="btn btn-warning btn" asp-action="Edit" asp-route-id="@item.ItemId">
-                        <i class="fas fa-edit"></i>
-                        Editar
-                    </a> |*@
+                            <i class="fas fa-edit"></i>
+                            Editar
+                        </a> |*@
                     <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ItemId">
                         <i class="fas fa-info-circle"></i>
                         Detalles

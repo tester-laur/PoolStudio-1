@@ -18,7 +18,7 @@
     #botones {
         margin-left: 10px;
         height: 38px;
-        margin-top: 10px;
+        margin-top: 40px;
         background-color: #27AE60;
         color: #FDFEFE;
     }
@@ -28,13 +28,13 @@
         height: 38px;
         background-color: #F39C12;
         color: #FDFEFE;
-        margin-top: 10px;
+        margin-top: 40px;
     }
 
     #buscador {
         width: 250px;
         margin-left: 450px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
 
     #agregar {
@@ -48,7 +48,7 @@
 <form method="get" asp-action="Search">
 
     <div class="row">
-        <h2 style="margin-left:30px;">
+        <h2 style="margin-left:70px; margin-top:40px;">
             Productos
             <a id="agregar" class="btn btn" asp-action="Create">
                 <i class="fas fa-plus"></i>
@@ -57,10 +57,10 @@
         </h2>
 
 
-        <input id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
+        <input style="margin-bottom:30px; margin-top:40px;" id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
         <input id="boton2" type="submit" name="Search" value="Buscar" class="btn btn" />
         <a id="botones" asp-action="Index" class="btn btn">
-            <i class="fas fa-fw fa-reply"></i>
+            <i class="fas fa-fw fa-reply">Regresar</i>
         </a>
     </div>
 
@@ -76,10 +76,10 @@
                 @*@Html.DisplayNameFor(model => model.ImageName)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Clasification)
+                @Html.DisplayNameFor(model => model.ItemName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ItemName)
+                @Html.DisplayNameFor(model => model.Clasification)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Modelo)
@@ -88,48 +88,48 @@
                 @Html.DisplayNameFor(model => model.Brand)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>*@
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" width="100px;" height="100px;" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Clasification.ItemType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>*@
-                <td>
-                    @*<a style="color: #FDFEFE;" class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ItemId">
-                        <i class="fas fa-edit"></i>
-                        Editar
-                    </a> |*@
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ItemId">
-                        <i class="fas fa-info-circle"></i>
-                        Detalles
-                    </a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ItemId">
-                        <i class="fas fa-trash-alt"></i>
-                        Eliminar
-                    </a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" width="100px;" height="100px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clasification.ItemType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>*@
+            <td>
+                @*<a style="color: #FDFEFE;" class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ItemId">
+                <i class="fas fa-edit"></i>
+                Editar
+            </a> |*@
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ItemId">
+                    <i class="fas fa-info-circle"></i>
+                    Detalles
+                </a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ItemId">
+                    <i class="fas fa-trash-alt"></i>
+                    Eliminar
+                </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
