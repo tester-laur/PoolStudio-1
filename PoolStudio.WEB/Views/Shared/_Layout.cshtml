@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="~/Squadfree/assets/img/PS.png.jpeg" rel="icon">
-    <link href="~/Squadfree/assets/img/PS.png.jpeg" rel="PS">
+    <link href="~/Squadfree/assets/img/logo.png" rel="icon">
+    <link href="~/Squadfree/assets/img/logo.png" rel="PS">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,20 +38,20 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top header-transparent">
+    <header id="header" class="fixed-top header-scrolled">
         <div class="container d-flex align-items-center">
 
             <div class="logo mr-auto">
-                <h1 class="text-light"><a href="https://localhost:44351"><span>POOL STUDIO</span></a></h1>
+                <h1 class="text-light"><a href="https://localhost:44351"><span></span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                <a href="index.html"><img src="~/Squadfree/assets/img/logo ps.png" alt="" class="img-fluid"></a>           
             </div>
-
+            
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="index.html">Inicio</a></li>
                     <li><a href="https://localhost:44351/items">Productos</a></li>
-                    <li><a href="#services">Sugerencias</a></li>
+                    <li><a href="#services">Recomendaciones</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
                     <li class="drop-down">
@@ -105,16 +105,21 @@
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="~/Squadfree/assets/img/astral.png" class="img-fluid" alt="">
+                        <img src="~/Squadfree/assets/img/cmp.png" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300">
                         <img src="~/Squadfree/assets/img/ak.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
                         <img src="~/Squadfree/assets/img/Limar.jpg" class="img-fluid" alt="">
                     </div>
+
+                    <div class="col-lg-2 col-md-2 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="~/Squadfree/assets/img/spin.jpg" class="img-fluid" alt="">
+                    </div>
+
                 </div>
 
             </div>
@@ -132,7 +137,7 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Sugerencias</h2>
+                    <h2>Recomendaciones</h2>
                     @*<p></p>*@
                 </div>
 
@@ -167,9 +172,9 @@
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             @*<div class="icon"><i class="bx bx-world"></i></div>*@
-                            <img src="~/Squadfree/assets/img/bomba.jpg" class="img-fluid" alt="">
-                            <h4 class="title"><a href="">Bombas</a></h4>
-                            <p class="description">Las bombas de piscina tambien necesitan un cuidado especial, Haz click aquí para conocer más sobre ellas.</p>
+                            <img src="~/Squadfree/assets/img/accesorios.jpg" class="img-fluid" alt="">
+                            <h4 class="title"><a href="">Accesorios</a></h4>
+                            <p class="description">El constante mantenimiento de tu piscina te ayudara a mantenerla saludable y siempre lista para un chapuzón.</p>
                         </div>
                     </div>
 
@@ -178,7 +183,7 @@
             </div>
         </section><!-- End Services Section -->
         <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts  section-bg">
+        @*<section id="counts" class="counts  section-bg">
             <div class="container">
 
                 <div class="row no-gutters">
@@ -218,7 +223,7 @@
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section>*@<!-- End Counts Section -->
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
@@ -232,114 +237,165 @@
 
             </div>
         </section><!-- End Cta Section -->
+        <!-- ======= Testimonials Section ======= -->
+
+        <section id="testimonials" class="testimonials section-bg">
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/Squadfree/assets/img/Carrusel/carrito.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Squadfree/assets/img/Carrusel/laminar.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Squadfree/assets/img/Carrusel/omnihub.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Squadfree/assets/img/Carrusel/omnihub.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Team Section ======= -->
+        @*<section id="team" class="team">
+            <div class="container">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Squadfree/assets/img/OmniHub.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+             </div>
+        </section>*@<!-- End Team Section -->
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Catalogo</h2>
+                    @*<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>*@
                 </div>
 
                 <div class="row" data-aos="fade-in">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
+                            <li data-filter=".filter-equipo">Equipos</li>
+                            <li data-filter=".filter-quimicos">Quimicos</li>
+                            <li data-filter=".filter-accesorios">Accesorios</li>
+                            <li data-filter=".filter-repuestos">Repuestos</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-accesorios">
                         <div class="portfolio-wrap">
                             <img src="~/Squadfree/assets/img/portfolio/ceramica shell.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/ceramica shell.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/ceramica shell.jpg" data-gall="portfolioGallery" class="venobox" title="Ceramica"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-quimicos">
                         <div class="portfolio-wrap">
                             <img src="~/Squadfree/assets/img/portfolio/clorizide.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/clorizide.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/clorizide.jpg" data-gall="portfolioGallery" class="venobox" title="Clorizide 91"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-quimicos">
                         <div class="portfolio-wrap">
                             <img src="~/Squadfree/assets/img/portfolio/cloro.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/cloro.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/cloro.jpg" data-gall="portfolioGallery" class="venobox" title="Cloro multifuncion"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-equipo">
                         <div class="portfolio-wrap">
                             <img src="~/Squadfree/assets/img/portfolio/SP HW.jpeg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/SP HW.jpeg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/SP HW.jpeg" data-gall="portfolioGallery" class="venobox" title="Bomba Hayward"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-accesorios">
                         <div class="portfolio-wrap">
-                            <img src="~/Squadfree/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                            <img src="~/Squadfree/assets/img/portfolio/carro.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/carro.jpg" data-gall="portfolioGallery" class="venobox" title="Filtro"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-equipo">
                         <div class="portfolio-wrap">
-                            <img src="~/Squadfree/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                            <img src="~/Squadfree/assets/img/portfolio/clorador.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/clorador.jpg" data-gall="portfolioGallery" class="venobox" title="Carro limpiador"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-equipo">
                         <div class="portfolio-wrap">
-                            <img src="~/Squadfree/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                            <img src="~/Squadfree/assets/img/portfolio/filtro.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/filtro.jpg" data-gall="portfolioGallery" class="venobox" title="Filtro Pentair"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-quimicos">
                         <div class="portfolio-wrap">
-                            <img src="~/Squadfree/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                            <img src="~/Squadfree/assets/img/portfolio/pastilla.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/pastilla.jpg" data-gall="portfolioGallery" class="venobox" title="Cloro en pastilla"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-accesorios">
                         <div class="portfolio-wrap">
-                            <img src="~/Squadfree/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                            <img src="~/Squadfree/assets/img/portfolio/test.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="~/Squadfree/assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="~/Squadfree/assets/img/portfolio/test.jpg" data-gall="portfolioGallery" class="venobox" title="Test Kit"><i class="bx bx-plus"></i></a>
+                                @*<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>*@
                             </div>
                         </div>
                     </div>
@@ -348,146 +404,13 @@
 
             </div>
         </section><!-- End Portfolio Section -->
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials section-bg">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Testimonials</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="owl-carousel testimonials-carousel">
-
-                    <div class="testimonial-item" data-aos="fade-up">
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                        <img src="~/Squadfree/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                        <h3>Saul Goodman</h3>
-                        <h4>Ceo &amp; Founder</h4>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                        <img src="~/Squadfree/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                        <img src="~/Squadfree/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                        <img src="~/Squadfree/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                        <img src="~/Squadfree/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Team</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up">
-                            <div class="pic"><img src="~/Squadfree/assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-instagram"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="150">
-                            <div class="pic"><img src="~/Squadfree/assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-instagram"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="pic"><img src="~/Squadfree/assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href="https://twitter.com/?lang=es"><i class="icofont-twitter"></i></a>
-                                    <a href="https://www.facebook.com"><i class="icofont-facebook"></i></a>
-                                    <a href="https://www.instagram.com/?hl=es-la"><i class="icofont-instagram"></i></a>
-                                    <a href="https://do.linkedin.com"><i class="icofont-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Team Section -->
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact section-bg">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Contact</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Contactanos</h2>
+                    @*<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>*@
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -503,7 +426,7 @@
                         <div class="info-box  mb-4">
                             <i class="bx bx-envelope"></i>
                             <h3>Envianos un correo</h3>
-                            <p>poolspastudio@gmail.com</p>
+                            <p>alluberes@poolstudio.do</p>
                         </div>
                     </div>
 
@@ -539,20 +462,20 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-info" data-aos="fade-up" data-aos-delay="50">
-                            <h3>Squadfree</h3>
-                            <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+                            <h3>Pool Studio</h3>
+                            @*<p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>*@
                             <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
+                                Avenida Tiradentes 64 <br>
+                                Santo Domingo, Republica Dominicana<br><br>
+                                <strong>Telefono:</strong> 809 770 3958<br>
+                                <strong>Email:</strong> alluberes@poolstudio.do<br>
                             </p>
                             <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                                @*<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>*@
                                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                @*<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>*@
                             </div>
                         </div>
                     </div>
@@ -560,15 +483,15 @@
                     <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="150">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#active">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#https://localhost:44351/items">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Recomendaciones</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="250">
+                    @*<div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="250">
                         <h4>Our Services</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -577,16 +500,16 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
                         </ul>
-                    </div>
+                    </div>*@
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter" data-aos="fade-up" data-aos-delay="350">
+                    @*<div class="col-lg-4 col-md-6 footer-newsletter" data-aos="fade-up" data-aos-delay="350">
                         <h4>Our Newsletter</h4>
                         <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
 
-                    </div>
+                    </div>*@
 
                 </div>
             </div>
