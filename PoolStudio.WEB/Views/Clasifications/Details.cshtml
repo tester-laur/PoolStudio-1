@@ -4,21 +4,31 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<style>
+    #details-body {
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: initial;
+        width: 70%;
+    }
+</style>
 
-<div>
-    <h4>Clasification</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ItemType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ItemType)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ClasificationId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div id="details-body">
+    <div>
+        <h1>Detalles</h1>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ItemType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ItemType)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.ClasificationId">Editar</a> |
+        <a class="btn btn-dark" asp-action="Index">Regresar</a>
+    </div>
 </div>
