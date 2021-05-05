@@ -5,78 +5,209 @@
 }
 
 <style>
-    #details-body {
+
+    #body {
+        margin: 0 auto;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background: rgb(204, 204, 204);
         margin-top: 10%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: initial;
-        width: 70%;
     }
 
-    #center-fields {
-        margin-left: auto;
-        margin-right: auto;
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #C9DEEA;
     }
+
+    #container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: "cover content";
+        box-shadow: -2px 0px 33px 0px rgba(0,0,0,0.75);
+        background-color: #C9DEEA;
+        border-radius: 8px 9px;
+    }
+
+    .cover {
+        grid-area: cover;
+        height: 80vh;
+        background-image: url('images/cover.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-color: #C9DEEA;
+    }
+
+    #images{
+        max-width: 383px;
+        max-height: 1536px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 7px 8px;
+        margin-top: 35%;
+    }
+
+    .content {
+        grid-area: content;
+        background: #EFEFEF;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        margin: 10px 20px;
+        height: 40px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        color: gray;
+    }
+
+    .content-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pages {
+        width: 20%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+        color: gray;
+        position: relative;
+        transform: translateY(38px);
+    }
+
+        .pages span {
+            margin-top: 15px;
+        }
+
+    .black-label {
+        width: 80%;
+    }
+
+        .black-label p {
+            font-size: 13px;
+            color: gray;
+            width: 70%;
+        }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .prix {
+        margin: 50px 0px;
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+        border-left: 4px solid rgb(255,177,33);
+    }
+
+        .prix span {
+            padding-left: 10px;
+        }
+
+    .crt {
+        color: gray;
+        left: 2px;
+        border-bottom: 1px solid rgb(177,177,177);
+    }
+
+    #font-color {
+        color: #34495E;
+        font-size: 16px;
+    }
+
+    #font-color-2 {
+        color: #34495E;
+        font-size: 14px;
+    }
+
+    #linea {
+        background-color: #85C1E9;
+        width: 100%;
+    }
+
 </style>
 
-<div id="details-body">
+<div id="body">
 
-    <h1>Detalles</h1>
+    <main>
+        <div id="container" class="container">
+            <div class="cover"><img id="images" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" /></div>
+            <div class="content">
+                <div class="nav">
+                    <span class="logo">DETALLES</span>
+                    <span><i class="fab fa-product-hunt" style=" font-size: 24px; color: rgba(103, 176, 209, 0.8);"></i></span>
+                </div>
+                <div class="content-body">
+                    <div class="pages">
+                        <span class="active"><b></b></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="black-label">
 
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                Producto
-                @*@Html.DisplayNameFor(model => model.ImageName)*@
-            </dt>
-            <dd class="col-sm-10">
-                <img src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" width="150px;" height="150px;" />
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Clasification)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Clasification.ItemType)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ItemName)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ItemName)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Modelo)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Modelo)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Brand)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Brand)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Comment)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Comment)
-            </dd>
-        </dl>
-    </div>
-    <div>
-        @*<a asp-action="Edit" asp-route-id="@Model.ItemId">Edit</a> |*@
-        <a class="btn btn-dark" asp-action="Index">
-            <i class="fas fa-arrow-left"></i>
-            Regresar
-        </a> |
+                        <span class="title"><b style="margin-bottom:10px;"> @Html.DisplayFor(model => model.ItemName) </b></span>
+                        <hr id="linea" />
 
-        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ItemId">
-            <i class="fas fa-trash-alt"></i>
-            Eliminar
-        </a>
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Clasification.ItemType): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Clasification.ItemType) </a>
+                        </p>
 
-    </div>
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Modelo): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Modelo) </a>
+                        </p>
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Brand): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Brand) </a>
+                        </p>
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Comment): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Comment) </a>
+                        </p>
+
+                        <div class="prix">
+                            <span><b> </b></span>
+
+                            <div id="buttons">
+                                <a class="btn btn-outline-dark" asp-action="Index">
+                                    Regresar
+                                </a> 
+
+                                <a style="margin-left: 5px;" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.ItemId">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Eliminar
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </main>
 
 </div>
