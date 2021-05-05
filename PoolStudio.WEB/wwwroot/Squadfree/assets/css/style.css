@@ -67,8 +67,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 15px 0;
+  padding: 7px 0;
   background: rgba(103, 176, 209, 0.8);
+  height: 85px;
 }
 
 #header.header-transparent {
@@ -98,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 200px;
+  max-height: 100px;
 }
 
 @media (max-width: 768px) {
@@ -341,12 +342,12 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../img/piscina.png") top center;
-  background-size: cover;
-  position: relative;
-  margin-bottom: -100px;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/piscina.png") top center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -100px;
 }
 
 #hero .hero-container {
