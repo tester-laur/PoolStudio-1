@@ -67,8 +67,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 15px 0;
+  padding: 7px 0;
   background: rgba(103, 176, 209, 0.8);
+  height: 85px;
 }
 
 #header.header-transparent {
