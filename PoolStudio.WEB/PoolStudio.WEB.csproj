@@ -20,6 +20,10 @@
     <Folder Include="wwwroot\Imagenes\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\detailStyle.css" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
