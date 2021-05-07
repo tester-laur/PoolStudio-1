@@ -48,7 +48,7 @@
 
     #images{
         max-width: 383px;
-        max-height: 1536px;
+        max-height: 1350px;
         object-fit: cover;
         cursor: pointer;
         border-radius: 7px 8px;
@@ -111,9 +111,9 @@
 
     .prix {
         margin: 50px 0px;
-        width: 45%;
+        width: 70%;
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
         border-left: 4px solid rgb(255,177,33);
     }
 
@@ -142,13 +142,52 @@
         width: 100%;
     }
 
+    #modal-image {
+        max-width: 450px;
+        max-height: initial;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 7px 8px;
+    }
+
+    #btn-modal {
+        background-color: #F39C12;
+        color: #EFEFEF;
+        margin: 0 auto;
+    }
+
 </style>
 
 <div id="body">
 
     <main>
         <div id="container" class="container">
-            <div class="cover"><img id="images" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" /></div>
+            <div class="cover">
+
+                <!-- Button trigger modal -->
+                <img id="images" data-target="#exampleModalCenter" data-toggle="modal" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" />
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 style="margin: 0 auto;" class="modal-title" id="exampleModalLongTitle"> @Html.DisplayFor(model => model.ItemName) </h5>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modal-image" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" />
+                            </div>
+                            <div class="modal-footer">
+                                <button style="margin: 0 auto;" type="button" class="btn btn-outline-danger" data-dismiss="modal">
+                                    <i class="fas fa-window-close" style="margin-right:3px;"></i>
+                                    Cerrar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             <div class="content">
                 <div class="nav">
                     <span class="logo">DETALLES</span>
@@ -192,9 +231,9 @@
                             <div id="buttons">
                                 <a class="btn btn-outline-dark" asp-action="Index">
                                     Regresar
-                                </a> 
+                                </a>
 
-                                <a style="margin-left: 5px;" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.ItemId">
+                                <a style="margin-left: 2px;" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.ItemId">
                                     <i class="fas fa-trash-alt"></i>
                                     Eliminar
                                 </a>
