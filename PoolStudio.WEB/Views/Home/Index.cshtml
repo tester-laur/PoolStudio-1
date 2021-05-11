@@ -16,6 +16,15 @@
     #background-modal {
         background-color: #C9DEEA;
     }
+
+    #portfolio-catalogo {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ddd !important;
+    }
 </style>
 
 <!-- ======= Hero Section ======= -->
@@ -142,318 +151,82 @@
             </div>
             <hr class="divider my-5" />
             <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up">
-                        @* <div class="icon"><i class="bx bxl-dribbble"></i></div>*@
-                        <img src="~/Squadfree/assets/img/fcartucho.png" class="img-fluid" alt="">
-                        <h4 class="title"><a href="">Filtro de cartucho</a></h4>
-                        <p class="description">Los filtros de cartuchos atrapan mayor cantidad de particulas y es por esto que el limpiado de sus cartuchos debe realizarse frecuentemente.</p>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        @*<div class="icon"><i class="bx bx-file"></i></div>*@
-                        <img src="~/Squadfree/assets/img/otoyph.jpg" class="img-fluid" alt="">
-                        <h4 class="title"><a href="">Test Kit</a></h4>
-                        <p class="description">Mide constantemente tu nivel de cloro y ph para que tu piscina se encuentre saludable. Aqui encontraras los pasos a seguir.</p>
-                    </div>
-                </div>
+                <!-- Portfolio Section-->
+                <section class="page-section portfolio" id="portfolio">
+                    <div class="container">
+                        <!-- Portfolio Section Heading-->
+                        <!-- Icon Divider-->
+                        <!-- Portfolio Grid Items-->
+                        <div class="row justify-content-center">
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        @*<div class="icon"><i class="bx bx-tachometer"></i></div>*@
-                        <img src="~/Squadfree/assets/img/valv.png" class="img-fluid" alt="">
-                        <h4 class="title"><a href="">Valvula selectora</a></h4>
-                        <p class="description">Utiliza todas las funciones de tu valvula selectora y podras alargar la vida util de tu filtro.</p>
-                    </div>
-                </div>
+                            <!-- Portfolio Item 1-->
+                            <div class="col-md-6 col-lg-3 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                                    </div>
+                                    <img style="max-height: 238px;" class="img-fluid" src="~/Squadfree/assets/img/fcartucho.png" alt="">
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-md-center mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        @*<div class="icon"><i class="bx bx-world"></i></div>*@
-                        <img src="~/Squadfree/assets/img/accesorios.jpg" class="img-fluid" alt="">
-                        <h4 class="title"><a href="">Accesorios</a></h4>
-                        <p class="description">El constante mantenimiento de tu piscina te ayudara a mantenerla saludable y siempre lista para un chapuzón.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- End Services Section -->
-    <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
+                                    <div>
+                                        <h5 class="title text-center"><a href="">Filtro de Cartucho</a></h5>
+                                    </div>
 
-                <!-- Portfolio Item 1-->
-                <div class="col-md-6 col-lg-3 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 2-->
+                            <div class="col-md-6 col-lg-3 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                                    </div>
+                                    <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/valv.png" alt="">
+
+                                    <div>
+                                        <h5 class="title text-center"><a href="">Válvula Selectora</a></h5>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 3-->
+                            <div class="col-md-6 col-lg-3 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                                    </div>
+                                    <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/otoyph.jpg" alt="">
+
+                                    <div>
+                                        <h5 class="title text-center"><a href="">Test Kit</a></h5>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 4-->
+                            <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                                    </div>
+                                    @*<img class="img-fluid" src="assets/img/portfolio/game.png" alt="">*@
+                                    <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/accesorios.jpg" alt="">
+
+                                    <div>
+                                        <h5 class="title text-center"><a href="">Accesorios</a></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img style="max-height: 238px;" class="img-fluid" src="~/Squadfree/assets/img/fcartucho.png" alt="">
-
-                        <div>
-                            <h5 class="title text-center"><a href="">Filtro de Cartucho</a></h5>
-                        </div>
-
                     </div>
-                </div>
-
-                <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-3 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
-                        </div>
-                        <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/valv.png" alt="">
-
-                        <div>
-                            <h5 class="title text-center"><a href="">Válvula Selectora</a></h5>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3-->
-                <div class="col-md-6 col-lg-3 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
-                        </div>
-                        <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/otoyph.jpg" alt="">
-
-                        <div>
-                            <h5 class="title text-center"><a href="">Test Kit</a></h5>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4-->
-                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
-                        </div>
-                        @*<img class="img-fluid" src="assets/img/portfolio/game.png" alt="">*@
-                        <img style="height: 238px; " class="img-fluid" src="~/Squadfree/assets/img/accesorios.jpg" alt="">
-
-                        <div>
-                            <h5 class="title text-center"><a href="">Accesorios</a></h5>
-                        </div>
-
-                    </div>
-                </div>
-
+                    <hr class="divider my-5" />
+                </section>
             </div>
         </div>
     </section>
-
-
-    <!-- Portfolio Modals-->
-
-    <!-- Portfolio Modal 1-->
-    <div class="portfolio-modal modal fadeIn" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div id="background-modal" class="modal-content">
-                <button class="close text-danger" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                Portfolio Modal - Title
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">Filtro de Cartucho</h2>
-                                Icon Divider
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                Portfolio Modal - Image
-                                <img style="max-width: 45%; max-height: 50%;" class="img-fluid rounded mb-5" src="~/Squadfree/assets/img/fcartucho.png" alt="" />
-                                Portfolio Modal - Text
-                                <p style="font-size:large;" class="mb-5">Los filtros de cartuchos atrapan mayor cantidad de particulas y es por esto que el limpiado de sus cartuchos debe realizarse frecuentemente.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 2-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div id="background-modal" class="modal-content">
-                <button class="close text-danger" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                Portfolio Modal - Title
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Válvula Selectora</h2>
-                                Icon Divider
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                Portfolio Modal - Image
-                                <img style="max-width: 55%; max-height: 60%;" class="img-fluid rounded mb-5" src="~/Squadfree/assets/img/valv.png" alt="..." />
-                                Portfolio Modal - Text
-                                <p style="font-size:large;" class="mb-5">Utiliza todas las funciones de tu válvula selectora y podras alargar la vida util de tu filtro.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div id="background-modal" class="modal-content">
-                <button class="close text-danger" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                Portfolio Modal - Title
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Test Kit</h2>
-                                Icon Divider
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                Portfolio Modal - Image
-                                <img style="max-width: 70%; max-height: 75%;" class="img-fluid rounded mb-5" src="~/Squadfree/assets/img/otoyph.jpg" alt="..." />
-                                Portfolio Modal - Text
-                                <p style="font-size:large;" class="mb-5">Mide constantemente tu nivel de cloro y ph para que tu piscina se encuentre saludable. Aqui encontraras los pasos a seguir.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div id="background-modal" class="modal-content">
-                <button class="close text-danger" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                Portfolio Modal - Title
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Accesorios</h2>
-                                Icon Divider
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                Portfolio Modal - Image
-                                <img style="max-width: 70%; max-height: 75%;" class="img-fluid rounded mb-5" src="~/Squadfree/assets/img/accesorios.jpg" alt="..." />
-                                Portfolio Modal - Text
-                                <p style="font-size:large;" class="mb-5">El constante mantenimiento de tu piscina te ayudara a mantenerla saludable y siempre lista para un chapuzón.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @*Portfolio Modal 5
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                     Portfolio Modal - Title
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Locked Safe</h2>
-                                     Icon Divider
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                     Portfolio Modal - Image
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                     Portfolio Modal - Text
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         Portfolio Modal 6
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                     Portfolio Modal - Title
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Submarine</h2>
-                                     Icon Divider
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                     Portfolio Modal - Image
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                     Portfolio Modal - Text
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>*@
-
+    <!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
@@ -492,6 +265,7 @@
     </section>
     <hr class="divider my-5" />
     <!-- End Testimonials Section -->
+
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -504,7 +278,7 @@
             <div class="row" data-aos="fade-in">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter="*" class="filter-active">Todos</li>
                         <li data-filter=".filter-equipo">Equipos</li>
                         <li data-filter=".filter-quimicos">Quimicos</li>
                         <li data-filter=".filter-accesorios">Accesorios</li>
@@ -513,7 +287,7 @@
                 </div>
             </div>
 
-            <div class="row portfolio-container" data-aos="fade-up">
+            <div class="row" data-aos="fade-up">
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-accesorios">
                     <div class="portfolio-wrap">
@@ -600,7 +374,9 @@
                 <a href="https://localhost:44351/items" class="btn btn-light btn-lg" tabindex="-1" role="button">Ver más</a>
             </div>
         </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Portfolio Section -->
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
         <div class="container">
@@ -642,3 +418,40 @@
         </div>
     </section><!-- End Contact Section -->
 </main>
+
+<!--
+    
+
+<div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
+    <div class="icon-box" data-aos="fade-up">
+        <img src="~/Squadfree/assets/img/fcartucho.png" class="img-fluid" alt="">
+        <h4 class="title"><a href="">Filtro de cartucho</a></h4>
+        <p class="description">Los filtros de cartuchos atrapan mayor cantidad de particulas y es por esto que el limpiado de sus cartuchos debe realizarse frecuentemente.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
+    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+        <img src="~/Squadfree/assets/img/otoyph.jpg" class="img-fluid" alt="">
+        <h4 class="title"><a href="">Test Kit</a></h4>
+        <p class="description">Mide constantemente tu nivel de cloro y ph para que tu piscina se encuentre saludable. Aqui encontraras los pasos a seguir.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-3 d-flex align-items-center mb-5 mb-lg-0">
+    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+        <img src="~/Squadfree/assets/img/valv.png" class="img-fluid" alt="">
+        <h4 class="title"><a href="">Valvula selectora</a></h4>
+        <p class="description">Utiliza todas las funciones de tu valvula selectora y podras alargar la vida util de tu filtro.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-3 d-flex align-items-md-center mb-5 mb-lg-0">
+    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+        <img src="~/Squadfree/assets/img/accesorios.jpg" class="img-fluid" alt="">
+        <h4 class="title"><a href="">Accesorios</a></h4>
+        <p class="description">El constante mantenimiento de tu piscina te ayudara a mantenerla saludable y siempre lista para un chapuzón.</p>
+    </div>
+</div>
+
+-->
