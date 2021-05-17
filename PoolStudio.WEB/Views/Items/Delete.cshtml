@@ -4,76 +4,368 @@
     ViewData["Title"] = "Delete";
 }
 
+
 <style>
-    #delete-body {
+
+    #body {
+        margin: 0 auto;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background: rgb(204, 204, 204);
         margin-top: 10%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: initial;
-        width: 70%;
     }
 
-    #center-fields {
-        margin-left: auto;
-        margin-right: auto;
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #C9DEEA;
+    }
+
+    #25022001 {
+    }
+
+    #container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: "cover content";
+        box-shadow: -2px 0px 33px 0px rgba(0,0,0,0.75);
+        background-color: #C9DEEA;
+        border-radius: 8px 9px;
+    }
+
+    .cover {
+        grid-area: cover;
+        height: 80vh;
+        background-image: url('images/cover.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-color: #C9DEEA;
+    }
+
+    #images {
+        max-width: 383px;
+        max-height: 1350px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 7px 8px;
+        margin-top: 35%;
+    }
+
+    .content {
+        grid-area: content;
+        background: #EFEFEF;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        margin: 10px 20px;
+        height: 40px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        color: gray;
+    }
+
+    .content-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pages {
+        width: 20%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+        color: gray;
+        position: relative;
+        transform: translateY(38px);
+    }
+
+        .pages span {
+            margin-top: 15px;
+        }
+
+    .black-label {
+        width: 80%;
+    }
+
+        .black-label p {
+            font-size: 13px;
+            color: gray;
+            width: 70%;
+        }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .prix {
+        margin: 50px 0px;
+        width: 70%;
+        display: flex;
+        justify-content: left;
+        border-left: 4px solid rgb(255,177,33);
+    }
+
+        .prix span {
+            padding-left: 10px;
+        }
+
+    .crt {
+        color: gray;
+        left: 2px;
+        border-bottom: 1px solid rgb(177,177,177);
+    }
+
+    #font-color {
+        color: #34495E;
+        font-size: 16px;
+    }
+
+    #font-color-2 {
+        color: #34495E;
+        font-size: 14px;
+    }
+
+    #linea {
+        background-color: #E74C3C;
+        width: 100%;
+    }
+
+    #modal-image {
+        max-width: 450px;
+        max-height: initial;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 7px 8px;
+    }
+
+    #btn-modal {
+        background-color: #F39C12;
+        color: #EFEFEF;
+        margin: 0 auto;
     }
 </style>
 
-<div id="delete-body">
+<div id="body">
 
-    <h3>¿Está seguro que desea eliminar esto?</h3>
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                Producto
-                @*@Html.DisplayNameFor(model => model.ImageName)*@
-            </dt>
-            <dd class="col-sm-10">
-                <img src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" width="150px;" height="150px;" />
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Clasification)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Clasification.ItemType)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ItemName)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ItemName)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Modelo)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Modelo)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Brand)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Brand)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Comment)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Comment)
-            </dd>
-        </dl>
+    <main>
+        <div id="container" class="container">
+            <div class="cover">
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="ItemId" />
+                <!-- Button trigger modal -->
+                <img id="images" data-target="#exampleModalCenter" data-toggle="modal" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" />
 
-            <a class="btn btn-dark" asp-action="Index">
-                <i class="fas fa-arrow-left"></i>
-                Regresar
-            </a> |
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 style="margin: 0 auto;" class="modal-title" id="exampleModalLongTitle"> @Html.DisplayFor(model => model.ItemName) </h5>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modal-image" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" />
+                            </div>
+                            <div class="modal-footer">
+                                <button style="margin: 0 auto;" type="button" class="btn btn-outline-danger" data-dismiss="modal">
+                                    <i class="fas fa-window-close" style="margin-right:3px;"></i>
+                                    Cerrar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <input type="submit" value="Eliminar" class="btn btn-danger" />
-        </form>
-    </div>
+            </div>
+            <div class="content">
+                <div class="nav">
+                    <span class="logo text-danger">ELIMINAR PRODUCTO</span>
+                    <span><i class="fab fa-product-hunt" style=" font-size: 24px; color: #E74C3C"></i></span>
+                </div>
+                <div class="content-body">
+                    <div class="pages">
+                        <span class="active"><b></b></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="black-label">
+
+                        <span class="title"><b style="margin-bottom:10px;"> @Html.DisplayFor(model => model.ItemName) </b></span>
+                        <hr id="linea" />
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Clasification.ItemType): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Clasification.ItemType) </a>
+                        </p>
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Modelo): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Modelo) </a>
+                        </p>
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Brand): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Brand) </a>
+                        </p>
+
+                        <p>
+                            <a id="font-color"> @Html.DisplayNameFor(model => model.Comment): </a>
+                            <a id="font-color-2"> @Html.DisplayFor(model => model.Comment) </a>
+                        </p>
+
+                        <div class="prix">
+                            <span><b> </b></span>
+
+                            <div id="buttons">
+
+                                <form asp-action="Delete">
+
+                                    <a class="btn btn-outline-dark" asp-action="Index">
+                                        Regresar
+                                    </a>
+
+
+                                    <!-- Button trigger modal -->
+                                    <a class="btn btn-outline-danger" data-target="#exampleModalCenter2" data-toggle="modal">
+                                        <i class="fas fa-trash-alt"></i>
+                                        Eliminar
+                                    </a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="margin: 0 auto;" class="text-danger text-center"> ¿Está seguro que desea eliminar el siguiente producto? </h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="modal-image" src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button style="margin: 0 auto;" type="button" class="btn btn-outline-dark" data-dismiss="modal">
+                                                        <i class="fas fa-window-close" style="margin-right:3px;"></i>
+                                                        Cancelar
+                                                    </button>
+
+                                                    <input type="hidden" asp-for="ItemId" />
+
+                                                    <button style="margin: 0 auto;" type="submit" value="Eliminar" class="btn btn-outline-danger">
+                                                        <i class="fas fa-trash-alt" style="margin-right:3px;"></i>
+                                                        Eliminar
+                                                    </button>
+
+                                                    @*<input style="margin: 0 auto;" type="submit" value="Eliminar" class="btn btn-outline-danger" />*@
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </main>
 
 </div>
+
+
+
+@*<style>
+        #delete-body {
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: initial;
+            width: 70%;
+        }
+
+        #center-fields {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <div id="delete-body">
+
+        <h3>¿Está seguro que desea eliminar esto?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Producto
+                    @Html.DisplayNameFor(model => model.ImageName)
+                </dt>
+                <dd class="col-sm-10">
+                    <img src="@("~/Imagenes/" + Model.ImageName)" asp-append-version="true" width="150px;" height="150px;" />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Clasification)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Clasification.ItemType)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ItemName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ItemName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Modelo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Brand)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Brand)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Comment)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Comment)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ItemId" />
+
+                <a class="btn btn-dark" asp-action="Index">
+                    <i class="fas fa-arrow-left"></i>
+                    Regresar
+                </a> |
+
+                <input type="submit" value="Eliminar" class="btn btn-danger" />
+            </form>
+        </div>
+
+    </div>*@
