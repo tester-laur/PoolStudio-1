@@ -23,15 +23,11 @@
         margin-left: 10px;
         height: 38px;
         margin-top: 220px;
-        /*        background-color: #27AE60;
-        color: #FDFEFE;*/
     }
 
     #boton2 {
         margin-left: 10px;
         height: 38px;
-        /*        background-color: #F7F711;
-        color: #FDFEFE;*/
         margin-top: 220px;
     }
 
@@ -41,10 +37,61 @@
         margin-top: 220px;
     }
 
-    #agregar {
-        /*background-color: #2980B9;*/
-        /*color: #FDFEFE;*/
+    .main {
+        margin: 0 auto;
+        width: auto;
+        padding: 10%;
     }
+
+    .card {
+        width: 100%;
+        display: inline-block;
+        box-shadow: 2px 2px 20px #0094ff;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+
+    .image img {
+        width: 250px;
+        height: 250px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .title {
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .des {
+        padding: 3px;
+        text-align: center;
+        padding-top: 10px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    button {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transition: .5s;
+            cursor: pointer;
+        }
 </style>
 
 
@@ -63,69 +110,78 @@
         <input style="margin-top:220px;" id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
         <input id="boton2" type="submit" name="Search" value="Buscar" class="btn btn-outline-success" />
         <a id="botones" asp-action="Index" class="btn btn-outline-dark">
-            <i class="fas fa-fw fa-reply"></i>
+            Ver todos
         </a>
     </div>
 
 </form>
 
-<p>
-</p>
-<table style="margin-left:70px; margin-top:30px;" class="table">
-    <thead>
-        <tr>
-            <th>
-                Producto
-                @*@Html.DisplayNameFor(model => model.ImageName)*@
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                Categoría
-                @*@Html.DisplayNameFor(model => model.Clasification)*@
-            </th>
+@foreach (var item in Model)
+{
 
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Comment)
-                </th>*@
-            <th></th>
-        </tr>
-    </thead>
+    <div class="main">
+
+        <!--cards -->
+
+        <div class="row">
+
+            <div class="card">
+
+                <div class="image">
+
+
+                    <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" />
+
+                    <div class="title">
+                        <h1>
+                            Write title Here
+                        </h1>
+                    </div>
+                    <div class="des">
+                        <p>You can Add Desccription Here...</p>
+                        <button>Read More...</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--cards -->
+    </div>
+}
+
+
+
+<table style="margin-left:70px; margin-top:30px;" class="table">
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" width="100px;" height="100px;" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Clasification.ItemType)
-                </td>
+                    <div class="main">
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
+                        <!--cards -->
+
+                        <div class="card">
+
+                            <div class="image">
+                                <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" />
+                                <div class="title">
+                                    <h1>
+                                        Write title Here
+                                    </h1>
+                                </div>
+                                <div class="des">
+                                    <p>You can Add Desccription Here...</p>
+                                    <button>Read More...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cards -->
+                    </div>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Comment)
-                    </td>*@
-                <td>
-                    @*<a style="color: #FDFEFE;" class="btn btn-warning btn" asp-action="Edit" asp-route-id="@item.ItemId">
-                            <i class="fas fa-edit"></i>
-                            Editar
-                        </a> |*@
                     <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ItemId">
                         Detalles
                     </a> |
