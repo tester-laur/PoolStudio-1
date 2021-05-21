@@ -40,20 +40,20 @@
     .main {
         margin: 0 auto;
         width: auto;
-        padding: 10%;
+        padding: 6%;
     }
 
     .card {
         width: 100%;
         display: inline-block;
-        box-shadow: 2px 2px 20px #0094ff;
+        box-shadow: 2px 2px 20px #000000;
         border-radius: 5px;
         margin: 0 auto;
     }
 
     .image img {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -81,16 +81,25 @@
         margin-top: 40px;
         margin-bottom: 10px;
         background-color: white;
-        border: 1px solid black;
+        border: 1px solid #2E86C1;
+        color: #2E86C1;
         border-radius: 5px;
         padding: 10px;
     }
 
         button:hover {
-            background-color: black;
+            background-color: #2E86C1;
             color: white;
             transition: .5s;
             cursor: pointer;
+        }
+
+    #a {
+        color: #2E86C1;
+    }
+
+        #a:hover {
+            color: white;
         }
 </style>
 
@@ -134,12 +143,18 @@
 
                     <div class="title">
                         <h1>
-                            Write title Here
+                            @Html.DisplayFor(modelItem => item.ItemName)
                         </h1>
                     </div>
                     <div class="des">
-                        <p>You can Add Desccription Here...</p>
-                        <button>Read More...</button>
+                        <p>@Html.DisplayFor(modelItem => item.Clasification.ItemType)</p>
+                        <button asp-action="Details" asp-route-id="@item.ItemId">
+                            <a id="a" class="btn btn" asp-action="Details" asp-route-id="@item.ItemId">
+                                Más detalles...
+                            </a>
+                        </button>
+
+
                     </div>
 
                 </div>
@@ -151,48 +166,6 @@
     </div>
 }
 
-
-
-<table style="margin-left:70px; margin-top:30px;" class="table">
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <div class="main">
-
-                        <!--cards -->
-
-                        <div class="card">
-
-                            <div class="image">
-                                <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" />
-                                <div class="title">
-                                    <h1>
-                                        Write title Here
-                                    </h1>
-                                </div>
-                                <div class="des">
-                                    <p>You can Add Desccription Here...</p>
-                                    <button>Read More...</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--cards -->
-                    </div>
-                </td>
-                <td>
-                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ItemId">
-                        Detalles
-                    </a> |
-                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ItemId">
-                        Eliminar
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 
 @* Paginación (Lo correcto es hacerlo con un partial view(que ya está creado), pero hay un bobo y mientras tanto se deja así.) *@
 
