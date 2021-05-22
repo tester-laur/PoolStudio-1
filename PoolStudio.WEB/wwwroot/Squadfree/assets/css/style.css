@@ -586,7 +586,7 @@ section {
 
 .about .icon-boxes .icon-box p {
   font-size: 15px;
-  color: #848484;
+  color: #383838/*#848484*/;
 }
 
 @media (max-width: 1200px) {
