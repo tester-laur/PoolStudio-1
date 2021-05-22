@@ -17,11 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Videos\" />
     <Folder Include="wwwroot\Imagenes\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\css\detailStyle.css" />
+    <None Include="wwwroot\Videos\POOL.mov" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
