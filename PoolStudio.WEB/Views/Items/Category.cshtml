@@ -1,0 +1,203 @@
+﻿@model IEnumerable<PoolStudio.WEB.Models.Item>
+
+    <style>
+
+        #container{
+            width: 100%;
+            margin-top: 10%;
+            letter-spacing: 1px;
+        }
+
+        .container h2{
+            background: #0062cc;
+            color: #fff;
+            width: 180px;
+            font-size: 24px;
+            padding: 5px;
+            height: 39px;
+        }
+
+        .container h2::after{
+            content: '';
+            border-top: 38px solid #0062cc;
+            border-right: 40px solid transparent;
+            position: relative;
+            left: 42px;
+            top: 34px;
+        }
+
+        .row{
+            margin-top: 30px;
+        }
+
+        .imagen{
+            width: 110%;
+            height: 270px;
+        }
+
+        .product-bottom .fa{
+            color: #28a745;
+            font-size: 10px;
+        }
+
+        .product-bottom h3{
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .overlay{
+            display: block;
+            opacity: 0;
+            position: absolute;
+            top: 10%;
+            margin-left: 0;
+            width: 70px;
+        }
+
+        .product-top:hover {
+            border: 3px solid #0062cc;
+        }
+
+        .product-top:hover .overlay{
+            opacity: 1;
+            margin-left: 5%;
+            transition: 0.5s;
+        }
+
+        .overlay .fa{
+            cursor: pointer;
+            background-color: #000;
+            color: #000;
+            height: 35px;
+            width: 35px;
+            font-size: 20px;
+            padding: 7px;
+            margin: 5%;
+            margin-bottom: 5%;
+        }
+
+        .overlay .btn-secondary{
+            background: #fff !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    </style>
+
+<div id="container" class="container">
+
+    <h2 style="font-family: sans-serif;">Categorías</h2>
+    <div id="row" class="row">
+
+        <div class="col-md-3">
+
+            <div class="product-top">
+
+                <img title="Accesorios" class="imagen" src="~/Category_Img/Accesorios.jpg" />
+
+                <div class="overlay">
+
+                    <a href="https://localhost:44351/Items/Search?varSearch=Accesorios&Search=Buscar" title="Ir a la vista" style="background-color: #FDFEFE;" class="btn btn"><i class="far fa-eye"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="product-bottom text-center">
+
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <a href="https://localhost:44351/Items/Search?varSearch=Accesorios&Search=Buscar"><h3 style="font-family: sans-serif; color: #000;">Accesorios</h3></a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="product-top">
+
+                <img title="Equipos" class="imagen" src="~/Category_Img/equipos.png" />
+
+                <div class="overlay">
+
+                    <a href="https://localhost:44351/Items/Search?varSearch=Equipos&Search=Buscar" title="Ir a la vista" style="background-color: #FDFEFE;" class="btn btn"><i class="far fa-eye"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="product-bottom text-center">
+
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <a href="https://localhost:44351/Items/Search?varSearch=Equipos&Search=Buscar"><h3 style="font-family: sans-serif; color: #000;">Equipos</h3></a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="product-top">
+
+                <img title="Químicos" class="imagen" src="~/Category_Img/Quimicos.jpg" />
+
+                <div class="overlay">
+
+                    <a href="https://localhost:44351/Items/Search?varSearch=Quimicos&Search=Buscar" title="Ir a la vista" style="background-color: #FDFEFE;" class="btn btn"><i class="far fa-eye"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="product-bottom text-center">
+
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <a href="https://localhost:44351/Items/Search?varSearch=Quimicos&Search=Buscar"><h3 style="font-family: sans-serif; color: #000;">Químicos</h3></a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="product-top">
+
+                <img title="Repuestos" class="imagen" src="~/Category_Img/Repuestos.jpg" />
+
+                <div class="overlay">
+
+                    <a href="https://localhost:44351/Items/Search?varSearch=Repuestos&Search=Buscar" title="Ir a la vista" style="background-color: #FDFEFE;" class="btn btn"><i class="far fa-eye"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="product-bottom text-center">
+
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <a href="https://localhost:44351/Items/Search?varSearch=Repuestos&Search=Buscar"><h3 style="font-family: sans-serif; color: #000;">Repuestos</h3></a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

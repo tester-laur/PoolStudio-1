@@ -25,6 +25,12 @@ namespace PoolStudio.WEB.Controllers
             this._hostEnvironment = hostEnvironment;
         }
 
+        public async Task<IActionResult> Category()
+        {
+            return View(await _context.Item.ToListAsync());
+        }
+
+
         // GET: Items
         public async Task<IActionResult> Index(int pg = 1)
         {
