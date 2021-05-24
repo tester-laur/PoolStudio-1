@@ -73,6 +73,21 @@ namespace PoolStudio.WEB.Controllers
             return View(await varQuery.AsNoTracking().ToListAsync());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> CategorySearch(string varCatSearch)
+        {
+            ViewData["GetDetails"] = varCatSearch;
+
+            var varQuery = from x in _context.Item.Include(o => o.Clasification) select x;
+            if (!String.IsNullOrEmpty(varCatSearch))
+            {
+                varQuery = varQuery.Where(
+                    x => x.Clasification.ItemType.Contains(varCatSearch));
+            }
+
+            return View(await varQuery.AsNoTracking().ToListAsync());
+        }
+
         // GET: Items/Details/5
         public async Task<IActionResult> Details(int? id)
         {

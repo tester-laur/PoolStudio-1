@@ -1,0 +1,213 @@
+﻿@model IEnumerable<PoolStudio.WEB.Models.Item>
+
+
+@{
+
+
+    ViewData["Title"] = "Index";
+
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+
+}
+
+<style>
+    #botones {
+        margin-left: 10px;
+        height: 38px;
+        margin-top: 220px;
+    }
+
+    #boton2 {
+        margin-left: 10px;
+        height: 38px;
+        margin-top: 220px;
+    }
+
+    #buscador {
+        width: 250px;
+        margin-left: 450px;
+        margin-top: 220px;
+    }
+
+    .main {
+        margin: 0 auto;
+        width: auto;
+        padding: 6%;
+    }
+
+    .card {
+        width: 100%;
+        display: inline-block;
+        box-shadow: 2px 2px 20px #000000;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+
+    .image img {
+        width: 300px;
+        height: 300px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .title {
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .des {
+        padding: 3px;
+        text-align: center;
+        padding-top: 10px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    button {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: 1px solid #2E86C1;
+        color: #2E86C1;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+        button:hover {
+            background-color: #2E86C1;
+            color: white;
+            transition: .5s;
+            cursor: pointer;
+        }
+
+    #a {
+        color: #2E86C1;
+    }
+
+        #a:hover {
+            color: white;
+        }
+</style>
+
+
+
+<form method="get" asp-action="Search">
+
+    <div class="row" style="margin: 0 auto; padding-right: 310px; padding-bottom: 100px; margin-left: auto; margin-right: auto;">
+        <h2 style="margin-left:100px; margin-top:220px;">
+            Productos
+            <a class="btn btn-outline-primary" asp-action="Create">
+                Añadir
+            </a>
+        </h2>
+
+
+        <input style="margin-top:220px;" id="buscador" type="search" placeholder="Escriba aquí..." value="@ViewData["GetDetails"]" name="varCatSearch" class="form-control" />
+        <input id="boton2" type="submit" name="CategorySearch" value="Buscar" class="btn btn-outline-success" />
+        <a id="botones" asp-action="Index" class="btn btn-outline-dark">
+            Ver todos
+        </a>
+
+        <div class="container" style=" padding-right: 250px; padding-left: 250px;"></div>
+    </div>
+
+</form>
+
+
+@foreach (var item in Model)
+{
+
+    <div class="main">
+
+        <!--cards -->
+
+        <div class="row">
+
+            <div class="card">
+
+                <div class="image">
+
+
+                    <img src="@("~/Imagenes/" + item.ImageName)" asp-append-version="true" />
+
+                    <div class="title">
+                        <h1>
+                            @Html.DisplayFor(modelItem => item.ItemName)
+                        </h1>
+                    </div>
+                    <div class="des">
+                        <p>@Html.DisplayFor(modelItem => item.Clasification.ItemType)</p>
+                        <button asp-action="Details" asp-route-id="@item.ItemId">
+                            <a id="a" class="btn btn" asp-action="Details" asp-route-id="@item.ItemId">
+                                Más detalles...
+                            </a>
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--cards -->
+    </div>
+}
+
+
+@* Paginación (Lo correcto es hacerlo con un partial view(que ya está creado), pero hay un bobo y mientras tanto se deja así.) *@
+
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+
+            @if (pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Items" asp-action="Index" asp-route-pg="1">Inicio</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Items" asp-action="Index" asp-route-pg="@(pager.CurrentPage - 1)">Anterior</a>
+                </li>
+            }
+
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="Items" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                </li>
+            }
+
+            @if (pager.CurrentPage < pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Items" asp-action="Index" asp-route-pg="@(pager.CurrentPage + 1)">Siguiente</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Items" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Final</a>
+                </li>
+            }
+
+        </ul>
+    }
+
+</div>
+
