@@ -722,19 +722,19 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-    background: linear-gradient(rgb(2 3 54 / 0.82), rgb(2 3 54 / 0.82)) /*, url('~/Squadfree/assets/img/madera cover.png') fixed center center*/;
+    background: linear-gradient(rgb(10 56 232 / 0.82), rgb(10 56 232 / 0.82)) /*, url('~/Squadfree/assets/img/madera cover.png') fixed center center*/;
     background-size: cover;
     padding: 60px 0;
 }
 
     .cta h3 {
-        color: rgb(2 3 54 / 0.82);
+        color: rgb(10 56 232 / 0.82);
         font-size: 28px;
         font-weight: 700;
     }
 
     .cta p {
-        color: rgb(2 3 54 / 0.82);
+        color: rgb(10 56 232 / 0.82);
     }
 
     .cta .cta-btn {
@@ -748,12 +748,12 @@ section {
         border-radius: 25px;
         transition: 0.5s;
         margin-top: 10px;
-        border: 2px solid rgb(2 3 54 / 0.82);
-        color: rgb(2 3 54 / 0.82);
+        border: 2px solid rgb(10 56 232 / 0.82);
+        color: rgb(10 56 232 / 0.82);
     }
 
         .cta .cta-btn:hover {
-            border-color: rgb(2 3 54 / 0.82);
+            border-color: rgb(10 56 232 / 0.82);
         }
 
 /*--------------------------------------------------------------
